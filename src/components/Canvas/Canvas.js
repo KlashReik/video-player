@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useReducer, useRef, useState, useEffect } from "react";
 import { assetReducer } from "../../assetsReducer";
 import { URL_REGEX } from "../../constants";
 import { getAssetDimensions, showAssetInfo } from "../../helpers";
@@ -26,6 +26,14 @@ export const Canvas = () => {
   const [assets, dispatch] = useReducer(assetReducer, []);
 
   const videosContainerRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
 
   const deleteAsset = (assetId) => {
     dispatch({ type: "DELETE_ASSET", payload: assetId });
@@ -89,8 +97,21 @@ export const Canvas = () => {
       const dx = e.clientX - initialMousePosition.x;
       const dy = e.clientY - initialMousePosition.y;
 
-      const newWidth = initialAssetDimensions.width + dx;
-      const newHeight = initialAssetDimensions.height + dy;
+      const asset = assets.find((asset) => asset.id === resizingAssetId);
+
+      if (!asset) return;
+
+      const aspectRatio = asset.width / asset.height;
+
+      let newWidth, newHeight;
+
+      if (Math.abs(dx) >= Math.abs(dy)) {
+        newWidth = initialAssetDimensions.width + dx;
+        newHeight = newWidth / aspectRatio;
+      } else {
+        newHeight = initialAssetDimensions.height + dy;
+        newWidth = newHeight * aspectRatio;
+      }
 
       dispatch({
         type: "UPDATE_ASSET",
