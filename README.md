@@ -6,10 +6,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` - to start the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Don't forget to download node modules before.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Correct urls to match the regExp are: 
+
+- https://s3.us-east-2.amazonaws.com/vb-dev-media/moments/ads/reupload/avatar2-trailer-short.mp4
+- https://sjc1.vultrobjects.com/moments/demo/retail/1.jpg
+- https://sjc1.vultrobjects.com/moments/ads/square-emoji.png
+- https://ewr1.vultrobjects.com/moments/videos/car-parts.mp4
+- https://s3.us-east-2.amazonaws.com/vb-dev-media/moments/ads/reupload/vbqr.png
+- https://s3.us-east-2.amazonaws.com/vb-dev-media/moments/ads/reupload/coca-cola-short.mp4
+- https://s3.us-east-2.amazonaws.com/vb-dev-media/moments/ads/reupload/coca-cola-banner-right.jpg
+
+## Main features
+You may add videos and images on the screen. You can stack them on top of each other. What's more, you can even resize and delete them.
+The resizing keeps the source aspect ratio. You also can use a button to start/pause all the videos. 
