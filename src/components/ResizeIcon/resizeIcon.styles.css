@@ -1,0 +1,18 @@
+.resize-square {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(
+    -45deg,
+    #fff 25%,
+    transparent 25%,
+    transparent 50%,
+    #fff 50%,
+    #fff 75%,
+    transparent 75%
+  );
+  background-size: 8px 8px;
+  cursor: nwse-resize;
+}

@@ -1,0 +1,105 @@
+.control-menu {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid;
+}
+
+.asset {
+  position: absolute;
+  cursor: move;
+}
+
+.video-container {
+  position: "relative";
+  width: 100%;
+  height: 100%;
+}
+
+.resize-square {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  background: linear-gradient(
+    -45deg,
+    #fff 25%,
+    transparent 25%,
+    transparent 50%,
+    #fff 50%,
+    #fff 75%,
+    transparent 75%
+  );
+  background-size: 8px 8px;
+  cursor: nwse-resize;
+}
+
+.resize-icon {
+  position: "absolute";
+  top: 0;
+  left: 0;
+  width: "100%";
+  height: "100%";
+  background-color: rgba(0, 0, 0, 0.01);
+  cursor: "nwse-resize";
+}
+
+.video-drag-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin: 1rem;
+}
+
+button {
+  font-size: 1.5rem;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
+.input-container input {
+  flex: 1;
+}
